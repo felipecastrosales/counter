@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Contador de pessoas',
-    home: Home()));
+  debugShowCheckedModeBanner: false,
+  title: 'Contador de pessoas',
+  home: Home(),
+  theme: ThemeData(fontFamily: 'Poppins')));
 
 class Home extends StatefulWidget {
   @override
@@ -31,132 +32,134 @@ class _HomeState extends State<Home> {
   }
 
   final kLabelStyle = TextStyle(
-      color: Colors.white,
-      fontFamily: 'Poppins',
-      fontWeight: FontWeight.bold,
-      fontSize: 36,
-      decoration: TextDecoration.none,
-      height: 1.5);
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+    fontSize: 32,
+    height: 1.5
+  );
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return Stack(
-      children: <Widget>[
-        Image.asset(
-          'assets/images/bgapp.jpg',
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
-          alignment: Alignment.bottomCenter,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
           children: <Widget>[
-            Align(
-              alignment: Alignment.topCenter,
-              child: Image.asset(
-                'assets/images/people.png',
-                height: 175,
-              ),
+            Image.asset(
+              'assets/images/background.jpg',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+              alignment: Alignment.bottomCenter,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                  color: Colors.black38,
-                  borderRadius: BorderRadius.circular(120.0)),
-              child: Wrap(
-                children: [
-                  Center(
-                    child: Text(
-                      'Quantidade:',
-                      textAlign: TextAlign.center,
-                      style: kLabelStyle,
-                    ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Image.asset(
+                    'assets/images/people.png',
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.25,
                   ),
-                  Center(
-                    child: Text(
-                      '$_people',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 54,
-                        decoration: TextDecoration.none,
-                        color: Colors.white,
-                        height: 1.5,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: SizedBox(
-                      height: 24.0,
-                      width: double.maxFinite,
-                      child: Divider(
-                        thickness: 1.2,
-                        color: Colors.white70,
-                        indent: 100,
-                        endIndent: 100,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      FlatButton(
-                        child: Icon(
-                          Icons.add_circle,
-                          size: 50,
-                          color: Colors.greenAccent,
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 24),
+                  padding: EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: Colors.black38,
+                    borderRadius: BorderRadius.circular(120.0)),
+                  child: Wrap(
+                    children: [
+                      Center(
+                        child: Text(
+                          'Quantidade:',
+                          textAlign: TextAlign.center,
+                          style: kLabelStyle,
                         ),
-                        onPressed: () {
-                          _changePeople(1);
-                        },
                       ),
-                      FlatButton(
-                        child: Icon(
-                          Icons.remove_circle,
-                          size: 50,
-                          color: Colors.redAccent[400],
+                      Center(
+                        child: Text(
+                          '$_people',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 54,
+                            color: Colors.white,
+                            height: 1.5,
+                          ),
                         ),
-                        onPressed: () {
-                          _changePeople(-1);
-                        },
+                      ),
+                      Center(
+                        child: SizedBox(
+                          height: 16.0,
+                          width: double.maxFinite,
+                          child: Divider(
+                            thickness: 1.2,
+                            color: Colors.white70,
+                            indent: 100,
+                            endIndent: 100,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          FlatButton(
+                            child: Icon(
+                              Icons.add_circle,
+                              size: 50,
+                              color: Colors.greenAccent,
+                            ),
+                            onPressed: () {
+                              _changePeople(1);
+                            },
+                          ),
+                          FlatButton(
+                            child: Icon(
+                              Icons.remove_circle,
+                              size: 50,
+                              color: Colors.redAccent[400],
+                            ),
+                            onPressed: () {
+                              _changePeople(-1);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                height: 16,
-                width: double.maxFinite,
-                child: Divider(
-                  thickness: 1,
-                  color: Colors.white70,
-                  indent: 120,
-                  endIndent: 120,
                 ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  color: Colors.black38,
-                  borderRadius: BorderRadius.circular(32.0)),
-              child: Text(
-                _infoText,
-                textAlign: TextAlign.center,
-                style: kLabelStyle,
-              ),
-            ),
+                Center(
+                  child: SizedBox(
+                    height: 16,
+                    width: double.maxFinite,
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.white70,
+                      indent: 120,
+                      endIndent: 120,
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.black38,
+                    borderRadius: BorderRadius.circular(32.0)),
+                  child: Text(
+                    _infoText,
+                    textAlign: TextAlign.center,
+                    style: kLabelStyle,
+                  ),
+                ),
+              ],
+            )
           ],
-        )
-      ],
+        ),
+      ),
     );
   }
 }
