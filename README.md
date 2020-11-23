@@ -12,7 +12,7 @@
 
 - [Preview 📱](#preview-)
 
-- [Challenges and Learnings along the way 🤯](#challenges-and-learnings-along-the-way-)
+- [Challenges and Learnings along the way 🤯](#---challenges-and-learnings-along-the-way----)
 
 - [How to Use 🤔](#how-to-use-)
 
