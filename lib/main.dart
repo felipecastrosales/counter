@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Contador de pessoas',
-    home: Home()));
+  debugShowCheckedModeBanner: false,
+  title: 'Contador de pessoas',
+  home: Home()
+));
 
 class Home extends StatefulWidget {
   @override
@@ -31,18 +32,21 @@ class _HomeState extends State<Home> {
   }
 
   final kLabelStyle = TextStyle(
-      color: Colors.white,
-      fontFamily: 'Poppins',
-      fontWeight: FontWeight.bold,
-      fontSize: 36,
-      decoration: TextDecoration.none,
-      height: 1.5);
+    color: Colors.white,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.bold,
+    fontSize: 36,
+    decoration: TextDecoration.none,
+    height: 1.5,
+  );
 
   @override
   Widget build(BuildContext context) {
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
+
     return Stack(
       children: <Widget>[
         Image.asset(
@@ -66,8 +70,9 @@ class _HomeState extends State<Home> {
               margin: EdgeInsets.symmetric(horizontal: 32),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  color: Colors.black38,
-                  borderRadius: BorderRadius.circular(120.0)),
+                color: Colors.black38,
+                borderRadius: BorderRadius.circular(120.0),
+              ),
               child: Wrap(
                 children: [
                   Center(
@@ -117,7 +122,7 @@ class _HomeState extends State<Home> {
                       ),
                       FlatButton(
                         child: Icon(
-                          Icons.remove_circle,
+                          Icons.remove_circle, 
                           size: 50,
                           color: Colors.redAccent[400],
                         ),
@@ -146,12 +151,11 @@ class _HomeState extends State<Home> {
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: Colors.black38,
-                  borderRadius: BorderRadius.circular(32.0)),
+                color: Colors.black38,
+                borderRadius: BorderRadius.circular(32.0)
+              ),
               child: Text(
-                _infoText,
-                textAlign: TextAlign.center,
-                style: kLabelStyle,
+                _infoText, textAlign: TextAlign.center, style: kLabelStyle,
               ),
             ),
           ],
