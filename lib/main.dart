@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   title: 'Contador de pessoas',
-  home: Home()
-));
+  home: Home(),
+  theme: ThemeData(fontFamily: 'Poppins')));
 
 class Home extends StatefulWidget {
   @override
@@ -164,3 +164,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
