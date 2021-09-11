@@ -3,11 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(MaterialApp(
-  debugShowCheckedModeBanner: false,
-  title: 'Contador de pessoas',
-  home: Home()
-));
+void main() => runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Contador de pessoas',
+        home: Home(),
+        theme: ThemeData(fontFamily: 'Poppins'),
+      ),
+    );
 
 class Home extends StatefulWidget {
   @override
@@ -42,7 +45,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
@@ -110,7 +112,7 @@ class _HomeState extends State<Home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      FlatButton(
+                      ElevatedButton(
                         child: Icon(
                           Icons.add_circle,
                           size: 50,
@@ -120,9 +122,9 @@ class _HomeState extends State<Home> {
                           _changePeople(1);
                         },
                       ),
-                      FlatButton(
+                      ElevatedButton(
                         child: Icon(
-                          Icons.remove_circle, 
+                          Icons.remove_circle,
                           size: 50,
                           color: Colors.redAccent[400],
                         ),
@@ -152,10 +154,12 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.black38,
-                borderRadius: BorderRadius.circular(32.0)
+                borderRadius: BorderRadius.circular(32.0),
               ),
               child: Text(
-                _infoText, textAlign: TextAlign.center, style: kLabelStyle,
+                _infoText,
+                textAlign: TextAlign.center,
+                style: kLabelStyle,
               ),
             ),
           ],
