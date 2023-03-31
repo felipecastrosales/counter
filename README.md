@@ -27,7 +27,7 @@
    <p align="center">
       A Flutter Application that allows you to count the number of people who are in your restaurant, store, hotel or anything else that can be counted by number of people. <br>
       In addition to this possibility, you can also have information, for example, you put the amount you want to receive on your property.<br>
-      This application is in version 1.1.0.
+      This application is in version 2.0.0.
 
    </p>
 

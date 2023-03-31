@@ -1,23 +1,33 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Contador de pessoas',
-        home: Home(),
-        theme: ThemeData(fontFamily: 'Poppins'),
+void main() => runApp(const HomePage());
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Contador de pessoas',
+      home: const CounterPage(),
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        useMaterial3: true,
       ),
     );
-
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
+  }
 }
 
-class _HomeState extends State<Home> {
+class CounterPage extends StatefulWidget {
+  const CounterPage({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _CounterPageState();
+}
+
+class _CounterPageState extends State<CounterPage> {
   int _people = 0;
   String _infoText = 'Entre!';
 
@@ -34,7 +44,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  final kLabelStyle = TextStyle(
+  final kLabelStyle = const TextStyle(
     color: Colors.white,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.bold,
@@ -52,7 +62,7 @@ class _HomeState extends State<Home> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          'assets/images/bgapp.jpg',
+          'assets/images/background.jpg',
           fit: BoxFit.cover,
           height: double.infinity,
           width: double.infinity,
@@ -69,8 +79,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.all(16),
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.black38,
                 borderRadius: BorderRadius.circular(120.0),
@@ -88,7 +98,7 @@ class _HomeState extends State<Home> {
                     child: Text(
                       '$_people',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 54,
                         decoration: TextDecoration.none,
@@ -97,7 +107,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Center(
+                  const Center(
                     child: SizedBox(
                       height: 24.0,
                       width: double.maxFinite,
@@ -113,31 +123,36 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       ElevatedButton(
-                        child: Icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          minimumSize: const Size(0, 75),
+                        ),
+                        child: const Icon(
                           Icons.add_circle,
-                          size: 50,
+                          size: 36,
                           color: Colors.greenAccent,
                         ),
-                        onPressed: () {
-                          _changePeople(1);
-                        },
+                        onPressed: () => _changePeople(1),
                       ),
+                      const SizedBox(width: 8),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          minimumSize: const Size(0, 75),
+                        ),
                         child: Icon(
                           Icons.remove_circle,
-                          size: 50,
+                          size: 36,
                           color: Colors.redAccent[400],
                         ),
-                        onPressed: () {
-                          _changePeople(-1);
-                        },
+                        onPressed: () => _changePeople(-1),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            Center(
+            const Center(
               child: SizedBox(
                 height: 16,
                 width: double.maxFinite,
@@ -150,8 +165,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
-              padding: EdgeInsets.all(20),
+              margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.black38,
                 borderRadius: BorderRadius.circular(32.0),

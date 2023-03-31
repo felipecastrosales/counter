@@ -1,4 +1,4 @@
-package felipecastrosales.contador_de_pessoas
+package com.example.counter
 
 import io.flutter.embedding.android.FlutterActivity
 
