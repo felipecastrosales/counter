@@ -9,15 +9,9 @@
    <p>
    
 - [About 📖](#about-)
-
 - [Preview 📱](#preview-)
-
-- [Challenges and Learnings along the way 🤯](#---challenges-and-learnings-along-the-way----)
-
 - [How to Use 🤔](#how-to-use-)
-
 - [How to Contribute 💪](#how-to-contribute-)
-
 - [License 📝](#license-)
 
 ---
@@ -27,7 +21,6 @@
    <p align="center">
       A Flutter Application that allows you to count the number of people who are in your restaurant, store, hotel or anything else that can be counted by number of people. <br>
       In addition to this possibility, you can also have information, for example, you put the amount you want to receive on your property.<br>
-      This application is in version 2.0.0.
 
    </p>
 
@@ -38,19 +31,6 @@
    <p align="center">
    <img src="assets/images/demo/CounterAppDemo1.gif">
    </p>
-
----
-
-   <h2 align="center">
-   Challenges and Learnings along the way 🤯
-   </h2>
-
-   The development of this application was one of my experiences with [Flutter](https://flutter.dev/). I am and I get along very well with this [Dart](https://dart.dev/) framework.<br>
-   In this app I had a short introduction to widgets, going straight to the [documentation](https://flutter.dev/docs), and also through practice.<br>
-   Like any project, I had my challenges, I had some errors along the way, but they were quickly resolved.<br>
-   In addition, this was a simple application, which I managed to develop very well, I hope to continue evolving in Flutter, as I am loving this experience so much.
-
----
 
    <h2 align="center">How to Use 🤔</h2>
 
